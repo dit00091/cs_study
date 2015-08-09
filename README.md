@@ -1,9 +1,5 @@
-CS部 勉強会
+CS部 勉強会 ![CS](https://github.com/dit00091/cs_study/blob/master/cs_image.png)
 ===
-
-![CS](https://github.com/dit00091/cs_study/blob/master/cs_image.png)
-
-[TOC]
 
 # 2015/08/21 git編第2回
 

@@ -67,7 +67,6 @@ CS部 勉強会 ![CS](https://github.com/dit00091/cs_study/blob/master/cs_image.
     * textで簡単にHTMLをwikiっぽく作れますよって話です。
     * gitのREADMEがこのMarkdownって形式です。つまりこの資料。（README.md）
 
----
 
 * 使ってるエディタをMarkdownに対応させたり、新しいエディタをインストールするのって面倒じゃない？
     * 今回の資料を作るのに家パソに[Haroopad](http://pad.haroopress.com/user.html)ってのを入れてみた。

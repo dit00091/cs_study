@@ -66,7 +66,9 @@ CS部 勉強会 ![CS](https://github.com/dit00091/cs_study/blob/master/cs_image.
 * 文書を記述するための軽量マークアップ言語のひとつ。 もとはプレーンテキスト形式で手軽に書いた文書からHTMLを生成するために開発された。(by Wikipedia)
     * textで簡単にHTMLをwikiっぽく作れますよって話です。
     * gitのREADMEがこのMarkdownって形式です。つまりこの資料。（README.md）
+
 ---
+
 * 使ってるエディタをMarkdownに対応させたり、新しいエディタをインストールするのって面倒じゃない？
     * 今回の資料を作るのに家パソに[Haroopad](http://pad.haroopress.com/user.html)ってのを入れてみた。
     * 公式サイトでダウンロード＆インストールするだけ。

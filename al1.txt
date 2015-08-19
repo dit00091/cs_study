@@ -1,0 +1,60 @@
+h1. Git運用フロー
+
+
+{{toc}}
+
+---
+
+h2. ルール
+
+* developブランチへのマージは特定の人間のみが行う。
+* 毎日帰宅前に、その日の作業内容をサーバーにpushする。
+
+---
+
+h2. 基本方針
+
+* GitFlowに則って運用する
+* リリース前なので、release、hotfixブランチは一旦考慮しない
+
+---
+
+h2. 使用するブランチ
+
+* develop
+** 開発を行うためのブランチ。featureブランチなど他のブランチで行った作業は、ここにマージされる
+*開発者は、このブランチ上では作業を行わない*
+
+* feature
+** 主要な機能を実装するためのブランチ。
+*開発者は、主にこのブランチ上で作業を行う*
+*機能の実装やバグフィックスなど、タスクごとにfeatureブランチを作成し、作業を行う*
+** featureブランチの命名ルールは「feature/○○○」
+○○○は実装中の機能名を英数字で。命名ルールはチーム内で管理しやすい形でよい。
+
+* master
+** 開発期間中は使用しない
+
+---
+
+h2. フロー
+
+(masterも表示されているが、一旦気にしないでください)
+
+!git-workflow-release-cycle-2feature.png!
+
+１． developブランチからfeatureブランチを切り、機能実装/修正を行う
+２． featureでの実装/修正が終わったら、developへプルリクエストを投げる
+３． レビューをした後、developへマージする
+＝＝＝上記を繰り返し、機能を作り上げていく＝＝＝
+
+
+---
+
+h3. 参考URL
+
+・Atlassian　Gitチュートリアル
+https://www.atlassian.com/ja/git/workflows#!workflow-gitflow
+
+・atmarkIT
+http://www.atmarkit.co.jp/ait/articles/1311/18/news017_2.html

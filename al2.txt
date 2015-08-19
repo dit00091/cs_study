@@ -1,0 +1,32 @@
+h1. Git運用フロー（515以降）
+
+* サーバ環境ブランチ＋リリースブランチ＋作業ブランチ
+** 現行のmaster,developブランチに加えSTG環境用ブランチを用意する。
+*** %{color:brown}master% =PROD環境と同等
+*** %{color:green}staging% =STG環境と同等
+*** %{color:royalblue}develop% =DEV環境と同等
+* 運用
+** %{color:brown}master% から %{color:purple}release% ブランチを作成する
+*** Phase1.5作業はPhase1.5用のリリースブランチをmasterから作成後、さらにそこから作業ブランチを作成
+**** releaseブランチ作成
+　　　　→ %{color:purple}release% ブランチから作業ブランチ(%{color:hotpink}feature%)作成
+　　　　　　→ %{color:hotpink}feature% の作業を随時 %{color:purple}release% ブランチへマージ
+　　　　→ %{color:purple}release% ブランチを %{color:royalblue}develop% へマージ
+　　　　　　→DEV環境反映
+　　　　→ %{color:purple}release% ブランチを %{color:green}staging% へマージ（★527以降）
+　　　　　　→STG環境反映
+　　　　→ %{color:purple}release% ブランチを %{color:brown}master% へマージ
+　　　　　　→リリースタグ作成
+　　　　　　　　→PROD環境反映
+*** 527直前のバグ修正は個々にstagingから作業ブランチを作成する
+※その際、ドメイン（fortune2,life2）部分など、
+　masterとstagingで意図的に差異を発生させているファイルの取扱には注意すること
+**** 修正ブランチ(bugfix)作成
+　　　　→ %{color:green}staging% へマージ
+　　　　　　→STG環境反映
+　　　　→ %{color:brown}master% へマージ
+　　　　　　→PROD環境反映
+　　　　→並行作業中の %{color:purple}release% ブランチにプルリクを出す
+** "イメージ拡大":http://au-project.mediba.local/attachments/download/6757/%E3%83%95%E3%82%99%E3%83%A9%E3%83%B3%E3%83%81%E6%A1%88FIX_0515%E4%BF%AE%E6%AD%A3%E7%89%88.png
+!{width:700px}http://au-project.mediba.local/attachments/download/6757/%E3%83%95%E3%82%99%E3%83%A9%E3%83%B3%E3%83%81%E6%A1%88FIX_0515%E4%BF%AE%E6%AD%A3%E7%89%88.png!
+
